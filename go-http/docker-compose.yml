@@ -1,0 +1,17 @@
+version: '3.3'
+
+networks:
+  aw-network:
+   driver: bridge
+
+volumes:
+  prometheus_data:
+   
+services:
+  java-http:
+    image: luizdopc/go-http:v0.4
+    container_name: go-http
+    ports:
+      - 8080:8080
+    networks:
+      - aw-network
